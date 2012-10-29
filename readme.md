@@ -1,17 +1,28 @@
 JDT (Javascript Document Tool)
 ==============================
 
+- [安装](#install)
+- [如何开始](#quick_start)
+- [参数](#parameters)
+- [文件过滤](#parameters)
+- [指定@tag的合并](#merge)
+- [指定@tag的父级](#parent)
+- [指定@tag的别名](#alias)
+- [自定义@tag的格式化方法](#format)
 
+<a name="install"/>
 ### 安装
 
     $ npm install jdt
 
+<a name="quick_start"/>
 ### 使用
 jdt( `` sUri ``, `` [oArgs] ``);
 
     var jdt = require("jdt");
     jdt( '/data/data1/project/js');
 
+<a name="parameters"/>
 ### 参数
 
 #### sUri : String   必选参数，资源路径
@@ -186,3 +197,4 @@ js代码:
     		"g.h.i"
     	]
     }
+
