@@ -9,7 +9,7 @@ JDT (Javascript Document Tool)
 - [指定@tag的父级](#parent)
 - [指定@tag的别名](#alias)
 - [自定义@tag的格式化方法](#format)
-
+- [常见问题](#faq)
 <a name="install"/>
 ### 安装
 
@@ -225,8 +225,8 @@ A: jdt以@tag为解析标识，如果注释块中的文字没有归属，则会�
 配置别名:
 
     jdt("/data/data1/project/js", {
-        config:{
-    		"":{
+        "config" : {
+    		"" : {
     			"alias" : "value"
     		}
     	}
