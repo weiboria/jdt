@@ -1,28 +1,25 @@
 {
   "name": "jdt",
+  "version": "0.1.7",
   "description": "javascript document tool",
-  "version": "0.0.3",
-  "author": "liusong <liusong@staff.sina.com.cn>",
+  "main": "main.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "npm index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weiboria/jdt.git"
+  },
   "keywords": [
     "jsdoc",
     "javascript",
-    "document tool",
+    "document",
+    "tool",
     "weidoc"
   ],
-  "devDependencies": {
-    "mocha": "*"
-  },
-  "main": "./lib/jdt.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:weiboria/jdt.git"
-  },
-  "dist": {
-    "shasum": "e69b6253422919b2693dde1be7c490ddbbd7f350"
-  },
-  "_from": "jdt",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "liusong@staff.sina.com.cn",
   "license": "BSD"
 }
