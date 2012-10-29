@@ -10,6 +10,7 @@ JDT (Javascript Document Tool)
 - [指定@tag的别名](#alias)
 - [自定义@tag的格式化方法](#format)
 - [常见问题](#faq)
+
 <a name="install"/>
 ### 安装
 
