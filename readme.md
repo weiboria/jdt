@@ -4,7 +4,7 @@ JDT (Javascript Document Tool)
 - [安装](#install)
 - [如何开始](#quick_start)
 - [参数](#parameters)
-- [文件过滤](#parameters)
+- [文件过滤](#filter)
 - [指定@tag的合并](#merge)
 - [指定@tag的父级](#parent)
 - [指定@tag的别名](#alias)
@@ -16,7 +16,7 @@ JDT (Javascript Document Tool)
     $ npm install jdt
 
 <a name="quick_start"/>
-### 使用
+### 如何开始
 jdt( `` sUri ``, `` [oArgs] ``);
 
     var jdt = require("jdt");
@@ -66,6 +66,7 @@ jdt( `` sUri ``, `` [oArgs] ``);
     	}
     }
 
+<a name="filter"/>
 ### 文件过滤
 
 以过滤 .svn _svn为例
@@ -84,6 +85,7 @@ jdt( `` sUri ``, `` [oArgs] ``);
     	}
     })
 
+<a name="merge"/>
 ### 指定@tag的合并
 
 通常在注释中会出现多个一样的@tag，如果对该@tag配置了`` merge=true ``那么该@tag将被合并成为一个数组。
@@ -118,6 +120,7 @@ js代码:
     	]
     }
 
+<a name="parent"/>
 ### 指定@tag父级
 
 我们以家庭为例，成员包括父亲、母亲、及孩子，而我们需要在节构上表明成员与家的关系就会用到`` parent ``这个配置.
@@ -162,7 +165,7 @@ js代码:
     	}
     }
 
-
+<a name="alias"/>
 ### 指定@tag别名
 
 当我们需要给提取的@tag一个新的标签名称时，你会用到 `` alias `` 这个配置.
@@ -198,3 +201,5 @@ js代码:
     	]
     }
 
+<a name="alias"/>
+### 自定义@tag的格式化方法
