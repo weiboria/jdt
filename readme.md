@@ -202,8 +202,54 @@ js代码:
     	]
     }
 
-<a name="alias"/>
+<a name="format"/>
 ### 自定义@tag的格式化方法
+
+当@tag的解析需要特定处理，可以通过``format``配置@tag的解析方法
+
+在默认规则中，@tag注释行被解析为一个包含``tag``、``value``、``data``三部份的对象
+
+默认规则：
+1. 如果@tag被指定为另一@tag的父级，那么该@tag的内容会自动变为一个Object对象
+2、如果@tag没有被任何@tag指定为父级，并则没有配置 [merge](#merge) ,那么这个@tag的内容会是一个String字串
+
+1. 格式化函数必需有返回值
+2. 如果返回值是一个String类型，那么对该@tag 配置的 [parent](#parent) 将会失效
+
+
+注释代码:
+
+    /**
+     * @tag value
+     * data;
+     */
+
+注册格式化方法后，会得到一个类似这样的对象
+
+    {
+    	"tag"   : "tag",
+    	"value" : "value",
+    	"data"  : "data"
+    }
+
+以example为例，注册一个example的格式化方法
+
+    jdt("/data/data1/project/js", {
+    	config:{
+    		"example":{
+    			"format" : function(oData){
+					var data = ["@" + oData.tag, '|', oData.value, '|', oData.data].join(" ");
+					return data;
+				}
+    		}
+    	}
+    })
+
+得到结果:
+
+    {
+		"example": "@example | abc |  abcdefg"
+	}
 
 <a name="faq"/>
 ### 常见问题
@@ -238,3 +284,6 @@ A: jdt以@tag为解析标识，如果注释块中的文字没有归属，则会�
     {
         "value" : "text"
     }
+
+###### Q: 为什么我指定了父级@tag，但是并没有起作用。
+A: 通常这种情况与父级注册的格式化方法有关，请参考 [format](#format)
